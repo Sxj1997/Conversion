@@ -12,7 +12,7 @@ public class convertor extends Application{
     public void start(Stage stage) throws Exception{
         Parent root= FXMLLoader.load(getClass().getResource("convertor.fxml"));
         Scene scene=new Scene(root);
-        stage.setTitle("转换器");
+        stage.setTitle("base64转换器");
         stage.setScene(scene);
         stage.show();
     }
