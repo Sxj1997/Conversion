@@ -15,6 +15,6 @@
             <Font size="18.0" />
          </font>
       </TextArea>
-      <Button id="chooseButton" layoutX="40.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="选择" />
+      <Button id="chooseButton" layoutX="40.0" layoutY="190.0" mnemonicParsing="false" onAction="#chooseAction" prefHeight="40.0" prefWidth="90.0" text="选择" />
    </children>
 </AnchorPane>
