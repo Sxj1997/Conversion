@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="action">
    <children>
-      <Button id="startButton" layoutX="270.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="开始" />
+      <Button id="startButton" fx:id="startButton" layoutX="270.0" layoutY="190.0" mnemonicParsing="false" onAction="#startButton" prefHeight="40.0" prefWidth="90.0" text="开始" />
       <TextArea editable="false" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="365.0" text="使用说明：点击选择，选择文档后，点击开始即可" wrapText="true">
          <font>
             <Font size="18.0" />

@@ -8,13 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Base64;
 import java.util.ResourceBundle;
 
 public class action implements Initializable {
+    //@FXML
+    public String filePath;
+    public Stage stage;
     @FXML
-    private Stage stage;
+    public Button chooseButton;
     @FXML
-    private Button chooseButton;
+    public Button startButton;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -38,5 +45,14 @@ public class action implements Initializable {
 //        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
 //        fileChooser.getExtensionFilters().add(extFilter);
         File file = fileChooser.showOpenDialog(stage);
+        filePath=file.getAbsolutePath();
+        System.out.println(filePath);
+    }
+
+    public void startButton(ActionEvent actionEvent) throws Exception{
+        byte[] b = Files.readAllBytes(Paths.get(filePath));
+        String file64= Base64.getEncoder().encodeToString(b);
+        String path64=filePath+".txt";
+        Files.write(Paths.get(path64), Base64.getDecoder().decode(file64), StandardOpenOption.CREATE);
     }
 }
